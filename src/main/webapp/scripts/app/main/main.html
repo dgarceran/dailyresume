@@ -1,0 +1,67 @@
+<div ng-cloak>
+    <div class="row">
+        <div class="col-md-12">
+            <div ng-switch="isAuthenticated()">
+                <div ng-switch-when="false">
+                    <div>
+                        <h1>Come back soon!</h1>
+                    </div>
+                    <p class="lead">We will miss you!</p>
+                </div>
+                <div ng-switch-when="true" ng-if="isConnectedWithTumblr == true || isConnectedWithTwitter == true">
+                    <p class="lead">Here you have your dailyresume</p>
+                </div>
+                <div ng-switch-when="true" ng-if="isConnectedWithTumblr != true && isConnectedWithTwitter != true">
+                    <p class="lead">Connect an account!</p>
+                </div>
+                <!--<div class="alert alert-warning" ng-switch-when="false">
+                    If you want to <a class="alert-link" href="#/login">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
+                </div>
+
+                <div class="alert alert-warning" ng-switch-when="false">
+                    You don't have an account yet? <a class="alert-link" href="#/register">Register a new account</a>
+                </div>-->
+                <div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-12" ng-switch-when="true">
+                    <div ng-switch="isConnectedWithTwitter">
+                        <div ng-switch-when="false">
+                            <jh-social ng-provider="twitter"></jh-social>
+                        </div>
+                    </div>
+                    <div ng-switch="isConnectedWithTumblr">
+                        <div ng-switch-when="false">
+                            <jh-social ng-provider="tumblr"></jh-social>
+                        </div>
+                    </div>
+                    <div ng-if="isConnectedWithTumblr == true && isConnectedWithTwitter == true">
+                        <div class="row">
+                            <button class="btn btn-default" ui-sref="timeline">Twitter</button>
+                            <button class="btn btn-default" ui-sref="Dashboard">Tumblr</button>
+                            <button class="btn btn-default" ui-sref="drmAnalytics">Analytics</button>
+                        </div>
+                    </div>
+                    <div ng-if="isConnectedWithTumblr != true || isConnectedWithTwitter != true">
+                        <div ng-switch="isConnectedWithTwitter">
+                            <div ng-switch-when="true">
+                                <div class="row">
+                                    <button class="btn btn-default" ui-sref="timeline">Twitter</button>
+                                    <button class="btn btn-default">Analytics</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-switch="isConnectedWithTumblr">
+                            <div ng-switch-when="true">
+                                <div class="row">
+                                    <button class="btn btn-default" ui-sref="Dashboard">Tumblr</button>
+                                    <button class="btn btn-default">Analytics</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-if="isConnectedWithTumblr == true || isConnectedWithTwitter == true">
+                        <div ui-view="drm"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

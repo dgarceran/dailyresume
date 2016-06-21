@@ -1,0 +1,145 @@
+<div ng-cloak>
+    <div class="col-md-12">
+        <div class="row" ng-repeat="resource in resources">
+            <div class="col-md-12">
+                <div ng-switch on="resource.service">
+                    <div ng-switch-when="twitter" class="twitter-post post">
+                        <twitter-widget twitter-widget-id="resource.res" twitter-widget-options="{'align': 'center'}">
+                        </twitter-widget>
+                    </div>
+                    <div ng-switch-when="tumblr" class="tumblr-post post">
+                        <div ng-switch on="resource.type">
+                            <div ng-switch-when="photo">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <span class="tumblr-type-post">photo</span>
+                                    </div>
+                                    <div class="col-md-1 col-md-offset-10">
+                                        <a href="{{resource.postUrl}}"><span class="tumblr-link">link</span></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <img src="{{resource.res}}" alt="" class="tumblr-photo">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-5">
+                                        <span class="tumblr-notes">{{resource.notes}} <span class="glyphicon glyphicon-heart"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-switch-when="text">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <span class="tumblr-type-post">text</span>
+                                    </div>
+                                    <div class="col-md-1 col-md-offset-10">
+                                        <a href="{{resource.postUrl}}"><span class="tumblr-link">link</span></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div ng-bind-html="resource.res"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-5">
+                                        <span class="tumblr-notes">{{resource.notes}} <span class="glyphicon glyphicon-heart"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-switch-when="quote">
+                                <span class="tumblr-type-post">quote</span>
+                                <a href="{{resource.postUrl}}"><blockquote>{{resource.res}}</blockquote></a>
+                            </div>
+                            <div ng-switch-when="audio">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <span class="tumblr-type-post">audio</span>
+                                    </div>
+                                    <div class="col-md-1 col-md-offset-10">
+                                        <a href="{{resource.postUrl}}"><span class="tumblr-link">link</span></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div ng-bind-html="resource.res"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-5">
+                                        <span class="tumblr-notes">{{resource.notes}} <span class="glyphicon glyphicon-heart"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-switch-when="video">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <span class="tumblr-type-post">video</span>
+                                    </div>
+                                    <div class="col-md-1 col-md-offset-10">
+                                        <a href="{{resource.postUrl}}"><span class="tumblr-link">link</span></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div ng-bind-html="resource.res"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-5">
+                                        <span class="tumblr-notes">{{resource.notes}} <span class="glyphicon glyphicon-heart"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-switch-when="answer">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <span class="tumblr-type-post">answer</span>
+                                    </div>
+                                    <div class="col-md-1 col-md-offset-10">
+                                        <a href="{{resource.postUrl}}"><span class="tumblr-link">link</span></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div ng-bind-html="resource.res"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-5">
+                                        <span class="tumblr-notes">{{resource.notes}} <span class="glyphicon glyphicon-heart"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-switch-default>
+                                <!-- nothing -->
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-switch-default>
+                        <!-- nothing -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGED -->
+        <nav class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <ul class="pagination">
+                    <li ng-show="links['first'] >= 0" ng-click="loadPage(links['first'])"><a>&lt;&lt;</a></li>
+                    <li ng-show="page > 0" ng-click="loadPage(links['prev'] || 0)"><a>&lt;</a></li>
+                    <li ng-show="page > 1" ng-click="loadPage(page - 2)"><a>{{page - 1}}</a></li>
+                    <li ng-show="page > 0" ng-click="loadPage(page - 1)"><a>{{page}}</a></li>
+                    <li class="active"><a>{{page + 1}}</a></li>
+                    <li ng-show="page < links['last']" ng-click="loadPage(page + 1)"><a>{{page + 2}}</a></li>
+                    <li ng-show="page < links['last'] - 1" ng-click="loadPage(page + 2)"><a>{{page + 3}}</a></li>
+                    <li ng-show="links['next']" ng-click="loadPage(links['next'])"><a>&gt;</a></li>
+                    <li ng-show="links['last'] > 0" ng-click="loadPage(links['last'])"><a>&gt;&gt;</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="David (generated)" id="1466349489151-1">
+        <createTable tableName="drm_filtered">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="drm_filteredPK"/>
+            </column>
+            <column name="drm" type="INT"/>
+            <column name="idresource" type="VARCHAR(255)"/>
+            <column name="service" type="VARCHAR(255)"/>
+            <column name="timestamp" type="BIGINT"/>
+            <column name="username" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="David (generated)" id="1466349489151-2">
+        <createTable tableName="drm_tumblr">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="drm_tumblrPK"/>
+            </column>
+            <column name="blogname" type="VARCHAR(255)"/>
+            <column name="extraresource" type="VARCHAR(255)"/>
+            <column name="notes" type="INT"/>
+            <column name="postid" type="BIGINT"/>
+            <column name="posturl" type="VARCHAR(255)"/>
+            <column name="reblogkey" type="VARCHAR(255)"/>
+            <column name="timestamp" type="BIGINT"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="user" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="David (generated)" id="1466349489151-3">
+        <createTable tableName="drm_tumblr_analytics">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="drm_tumblr_analyticsPK"/>
+            </column>
+            <column name="date" type="datetime"/>
+            <column name="day" type="INT"/>
+            <column name="hours10" type="INT"/>
+            <column name="hours12" type="INT"/>
+            <column name="hours14" type="INT"/>
+            <column name="hours16" type="INT"/>
+            <column name="hours18" type="INT"/>
+            <column name="hours2" type="INT"/>
+            <column name="hours20" type="INT"/>
+            <column name="hours22" type="INT"/>
+            <column name="hours24" type="INT"/>
+            <column name="hours4" type="INT"/>
+            <column name="hours6" type="INT"/>
+            <column name="hours8" type="INT"/>
+            <column name="popularday" type="VARCHAR(255)"/>
+            <column name="popularhours10" type="VARCHAR(255)"/>
+            <column name="popularhours12" type="VARCHAR(255)"/>
+            <column name="popularhours14" type="VARCHAR(255)"/>
+            <column name="popularhours16" type="VARCHAR(255)"/>
+            <column name="popularhours18" type="VARCHAR(255)"/>
+            <column name="popularhours2" type="VARCHAR(255)"/>
+            <column name="popularhours20" type="VARCHAR(255)"/>
+            <column name="popularhours22" type="VARCHAR(255)"/>
+            <column name="popularhours24" type="VARCHAR(255)"/>
+            <column name="popularhours4" type="VARCHAR(255)"/>
+            <column name="popularhours6" type="VARCHAR(255)"/>
+            <column name="popularhours8" type="VARCHAR(255)"/>
+            <column name="timestamp" type="BIGINT"/>
+            <column name="username" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="David (generated)" id="1466349489151-4">
+        <createTable tableName="drm_tumblr_filtered">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="drm_tumblr_filteredPK"/>
+            </column>
+            <column name="blogname" type="VARCHAR(255)"/>
+            <column name="drm" type="INT"/>
+            <column name="extraresource" type="VARCHAR(255)"/>
+            <column name="notes" type="INT"/>
+            <column name="postid" type="BIGINT"/>
+            <column name="posturl" type="VARCHAR(255)"/>
+            <column name="reblogkey" type="VARCHAR(255)"/>
+            <column name="timestamp" type="BIGINT"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="user" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="David (generated)" id="1466349489151-5">
+        <createTable tableName="drm_twitter">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="drm_twitterPK"/>
+            </column>
+            <column name="creation" type="BIGINT"/>
+            <column name="fav" type="INT"/>
+            <column name="idrt" type="VARCHAR(255)"/>
+            <column name="profileimage" type="VARCHAR(255)"/>
+            <column name="rt" type="INT"/>
+            <column name="text" type="VARCHAR(255)"/>
+            <column name="tweetid" type="BIGINT"/>
+            <column name="userid" type="BIGINT"/>
+            <column name="username" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="David (generated)" id="1466349489151-6">
+        <createTable tableName="drm_twitter_analytics">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="drm_twitter_analyticsPK"/>
+            </column>
+            <column name="date" type="datetime"/>
+            <column name="day" type="INT"/>
+            <column name="hours10" type="INT"/>
+            <column name="hours12" type="INT"/>
+            <column name="hours14" type="INT"/>
+            <column name="hours16" type="INT"/>
+            <column name="hours18" type="INT"/>
+            <column name="hours2" type="INT"/>
+            <column name="hours20" type="INT"/>
+            <column name="hours22" type="INT"/>
+            <column name="hours24" type="INT"/>
+            <column name="hours4" type="INT"/>
+            <column name="hours6" type="INT"/>
+            <column name="hours8" type="INT"/>
+            <column name="popularday" type="VARCHAR(255)"/>
+            <column name="popularhours10" type="VARCHAR(255)"/>
+            <column name="popularhours12" type="VARCHAR(255)"/>
+            <column name="popularhours14" type="VARCHAR(255)"/>
+            <column name="popularhours16" type="VARCHAR(255)"/>
+            <column name="popularhours18" type="VARCHAR(255)"/>
+            <column name="popularhours2" type="VARCHAR(255)"/>
+            <column name="popularhours20" type="VARCHAR(255)"/>
+            <column name="popularhours22" type="VARCHAR(255)"/>
+            <column name="popularhours24" type="VARCHAR(255)"/>
+            <column name="popularhours4" type="VARCHAR(255)"/>
+            <column name="popularhours6" type="VARCHAR(255)"/>
+            <column name="popularhours8" type="VARCHAR(255)"/>
+            <column name="timestamp" type="BIGINT"/>
+            <column name="username" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="David (generated)" id="1466349489151-7">
+        <createTable tableName="drm_twitter_filtered">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="drm_twitter_filteredPK"/>
+            </column>
+            <column name="creation" type="BIGINT"/>
+            <column name="drm" type="INT"/>
+            <column name="fav" type="INT"/>
+            <column name="idrt" type="VARCHAR(255)"/>
+            <column name="profileimage" type="VARCHAR(255)"/>
+            <column name="rt" type="INT"/>
+            <column name="text" type="VARCHAR(255)"/>
+            <column name="tweetid" type="BIGINT"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="userid" type="BIGINT"/>
+            <column name="username" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="David (generated)" id="1466349489151-8">
+        <createTable tableName="jhi_persistent_audit_event">
+            <column autoIncrement="true" name="event_id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="jhi_persistent_audit_eventPK"/>
+            </column>
+            <column name="event_date" type="datetime"/>
+            <column name="event_type" type="VARCHAR(255)"/>
+            <column name="principal" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="David (generated)" id="1466349489151-9">
+        <createTable tableName="jhi_persistent_audit_evt_data">
+            <column name="event_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="David (generated)" id="1466349489151-10">
+        <createTable tableName="jhi_persistent_token">
+            <column name="series" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ip_address" type="VARCHAR(39)"/>
+            <column name="token_date" type="date"/>
+            <column name="token_value" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_agent" type="VARCHAR(255)"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="David (generated)" id="1466349489151-11">
+        <createTable tableName="jhi_social_user_connection">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="jhi_social_user_connectionPK"/>
+            </column>
+            <column name="access_token" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="display_name" type="VARCHAR(255)"/>
+            <column name="expire_time" type="BIGINT"/>
+            <column name="image_url" type="VARCHAR(255)"/>
+            <column name="profile_url" type="VARCHAR(255)"/>
+            <column name="provider_id" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="provider_user_id" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rank" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="refresh_token" type="VARCHAR(255)"/>
+            <column name="secret" type="VARCHAR(255)"/>
+            <column name="user_id" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="David (generated)" id="1466349489151-12">
+        <addPrimaryKey columnNames="event_id, name" tableName="jhi_persistent_audit_evt_data"/>
+    </changeSet>
+    <changeSet author="David (generated)" id="1466349489151-13">
+        <addPrimaryKey columnNames="series" constraintName="jhi_persistent_tokenPK" tableName="jhi_persistent_token"/>
+    </changeSet>
+    <changeSet author="David (generated)" id="1466349489151-14">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="jhi_persistent_token" constraintName="FK_c2yetr6vr7nrqhjvi1rl24b3l" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="David (generated)" id="1466349489151-15">
+        <addForeignKeyConstraint baseColumnNames="event_id" baseTableName="jhi_persistent_audit_evt_data" constraintName="FK_evb970jo5bi8aon8s65c0lyyn" deferrable="false" initiallyDeferred="false" referencedColumnNames="event_id" referencedTableName="jhi_persistent_audit_event"/>
+    </changeSet>
+    <changeSet author="David (generated)" id="1466349489151-16">
+        <addForeignKeyConstraint baseColumnNames="authority_name" baseTableName="jhi_user_authority" constraintName="FK_ik5r332jlvpolfr7e5n7oi42l" deferrable="false" initiallyDeferred="false" referencedColumnNames="name" referencedTableName="jhi_authority"/>
+    </changeSet>
+    <changeSet author="David (generated)" id="1466349489151-17">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="jhi_user_authority" constraintName="FK_pg0oaw6mr9pt3ibeihdc1jwof" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="David (generated)" id="1466349489151-18">
+        <dropDefaultValue columnDataType="datetime" columnName="created_date" tableName="jhi_user"/>
+    </changeSet>
+</databaseChangeLog>

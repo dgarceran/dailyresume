@@ -1,0 +1,22 @@
+{
+  "generator-jhipster": {
+    "baseName": "dailyresume",
+    "packageName": "com.davidgarceran.dailyresume",
+    "packageFolder": "com/davidgarceran/dailyresume",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "no",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": true,
+    "enableSocialSignIn": true,
+    "rememberMeKey": "43874a592802827161c20a50dbb97d36724755d3",
+    "testFrameworks": []
+  }
+}
